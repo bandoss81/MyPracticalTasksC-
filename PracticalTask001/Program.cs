@@ -73,7 +73,7 @@ if(res == 1)
 }
 while(res <= num)
 {
-    Console.WriteLine(res);
+    Console.Write(res + "  ");
     res += 2;
 }
 
