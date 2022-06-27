@@ -21,7 +21,7 @@ else
 
 // Задача 4
 
-int num1, num2, num3, max;
+/*int num1, num2, num3, max;
 
 Console.Write("Введите первое число: ");
 num1 = Convert.ToInt32(Console.ReadLine());
@@ -41,3 +41,21 @@ if(num1 < num2)
 }
 
 Console.WriteLine("Максималиное число: " + max);
+*/
+
+// Задача 6
+
+int num;
+
+Console.Write("Введите число: ");
+num = Convert.ToInt32(Console.ReadLine());
+
+if(num % 2 == 0)
+{
+    Console.WriteLine("Число ЧЕТНОЕ");
+}
+else
+{
+    Console.WriteLine("Число НЕЧЕТНОЕ");
+}
+
