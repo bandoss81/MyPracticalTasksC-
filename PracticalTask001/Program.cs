@@ -45,7 +45,7 @@ Console.WriteLine("Максималиное число: " + max);
 
 // Задача 6
 
-int num;
+/*int num;
 
 Console.Write("Введите число: ");
 num = Convert.ToInt32(Console.ReadLine());
@@ -57,5 +57,23 @@ if(num % 2 == 0)
 else
 {
     Console.WriteLine("Число НЕЧЕТНОЕ");
+}
+*/
+
+// Задача 8
+
+int num, res = 1;
+
+Console.Write("Введите число от 1 и более: ");
+num = Convert.ToInt32(Console.ReadLine());
+
+if(res == 1)
+{
+    res += 1;
+}
+while(res <= num)
+{
+    Console.WriteLine(res);
+    res += 2;
 }
 
