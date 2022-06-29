@@ -16,7 +16,7 @@ CutNumberVoid();
 */
 
 // Задача 13.
-
+/*
 Console.Write("Введи число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 string numText = Convert.ToString(num);
@@ -29,8 +29,27 @@ else
 {
   Console.WriteLine("Третьей цифры НЕТ!!!");
 }
+*/
 
+// Задача 15
 
+Console.Write("Введи цифру, обозначающую день недели: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+void CutNumberVoid (int num)
+{
+  if (num < 1 || num > 7)
+  {
+    Console.WriteLine("Это вообще не день недели.");
+  }
+  if (num == 6 || num == 7)
+  {
+    Console.WriteLine("(Этот день выходной.");
+  } 
+  else Console.WriteLine("Этот день не выходной.");
+}
+
+CutNumberVoid(num);
 
 
 
