@@ -16,7 +16,7 @@ void ShowArray(int[] array)
     {
         Console.Write("{0}", array[i]);
         if (i < (array.Length - 1))
-        {
+      {
             Console.Write(", ");
         }
     }
@@ -34,7 +34,7 @@ int EvenNumbers(int[] array)
             evenNum++;
         }
     }
-  return evenNum;
+    return evenNum;
 }
 
 // Console.Write("Введите количество чисел в массиве: ");
@@ -63,12 +63,40 @@ int EvenSum(int[] array)
     return sumElements;
 }
 
+// Console.Write("Введите количество чисел в массиве: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] numbers = new int[size];
+// RandomArray(numbers, -100, 100);
+// ShowArray(numbers);
+// int evenSum = EvenSum(numbers);
+// Console.WriteLine($"{evenSum} (Сумма чисел в массиве на нечетных позициях)");
+
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+void Difference(int[] array)
+{
+    int max = array[0];
+    for (int i = 0; i < array.Length; i++)
+    if (max < array[i])
+    {
+        max = array[i];
+    }
+    int min = array[0];
+    for (int i = 0; i < array.Length; i++)
+    if (min > array[i])
+    {
+        min = array[i];
+    }
+    int dif = max - min;
+    Console.WriteLine($"Разница между между максимальным ({max}) и минимальным({min}) элементами: {dif}");
+}
+
 Console.Write("Введите количество чисел в массиве: ");
 int size = Convert.ToInt32(Console.ReadLine());
-int[] numbers = new int[size];
-RandomArray(numbers, -100, 100);
-ShowArray(numbers);
-int evenSum = EvenSum(numbers);
-Console.WriteLine($"{evenSum} (Сумма чисел в массиве на нечетных позициях)");
-
+int[] array = new int[size];
+RandomArray(array, 1, 100);
+ShowArray(array);
+Difference(array);
 
