@@ -37,11 +37,38 @@ int EvenNumbers(int[] array)
   return evenNum;
 }
 
+// Console.Write("Введите количество чисел в массиве: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] numbers = new int[size];
+// RandomArray(numbers, 100, 1000);
+// ShowArray(numbers);
+
+// int evenNum = EvenNumbers(numbers);
+// Console.WriteLine($"{evenNum} (Количество чётных чисел в массиве)");
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+
+int EvenSum(int[] array)
+{
+    int sumElements = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i % 2 != 1)
+        {
+            sumElements = sumElements + array[i];
+        }
+    }
+    return sumElements;
+}
+
 Console.Write("Введите количество чисел в массиве: ");
 int size = Convert.ToInt32(Console.ReadLine());
 int[] numbers = new int[size];
-RandomArray(numbers, 100, 1000);
+RandomArray(numbers, -100, 100);
 ShowArray(numbers);
+int evenSum = EvenSum(numbers);
+Console.WriteLine($"{evenSum} (Сумма чисел в массиве на нечетных позициях)");
 
-int evenNum = EvenNumbers(numbers);
-Console.WriteLine($"{evenNum} (Количество чётных чисел в массиве)");
+
