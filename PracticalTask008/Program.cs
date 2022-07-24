@@ -44,16 +44,16 @@ void OrderArrayLines(int[,] array)
 }
 
 Console.Clear();
-Console.Write("Введите количество строк: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите количество столбцов: ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.Write("Минимальное значение: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.Write("Максимальное значение: ");
-int max = Convert.ToInt32(Console.ReadLine());
-int[,] array = CreateRandom2dArray(m, n, min, max);
-Show2dArray(array);
+// Console.Write("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Минимальное значение: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Максимальное значение: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+// int[,] array = CreateRandom2dArray(m, n, min, max);
+// Show2dArray(array);
 // Console.WriteLine($"\nОтсортированный массив: ");
 // OrderArrayLines(array);
 // Show2dArray(array);
@@ -71,18 +71,47 @@ int SumLineElements(int[,] array, int i)
     return sumLine;
 }
 
-int minSumLine = 0;
-int sumLine = SumLineElements(array, 0);
-for (int i = 1; i < array.GetLength(0); i++)
+// int minSumLine = 0;
+// int sumLine = SumLineElements(array, 0);
+// for (int i = 1; i < array.GetLength(0); i++)
+// {
+//     int temp = SumLineElements(array, i);
+//     if (sumLine > temp)
+//     {
+//         sumLine = temp;
+//         minSumLine = i;
+//     }
+// }
+
+// Console.WriteLine($"\n{minSumLine + 1} - строкa с наименьшей суммой ({sumLine}) элементов ");
+
+// Задача 62. Заполните спирально массив 4 на 4.
+// Например, на выходе получается вот такой массив:
+// 1 2 3 4
+// 12 13 14 5
+// 11 16 15 6
+// 10 9 8 7
+
+int n = 4;
+int[,] spiralArray = new int[n, n];
+
+int temp = 1;
+int i = 0;
+int j = 0;
+
+while (temp <= spiralArray.GetLength(0) * spiralArray.GetLength(1))
 {
-    int temp = SumLineElements(array, i);
-    if (sumLine > temp)
-    {
-        sumLine = temp;
-        minSumLine = i;
-    }
+    spiralArray[i, j] = temp;
+    temp++;
+    if (i <= j + 1 && i + j < spiralArray.GetLength(1) - 1)
+        j++;
+    else if (i < j && i + j >= spiralArray.GetLength(0) - 1)
+        i++;
+    else if (i >= j && i + j > spiralArray.GetLength(1) - 1)
+        j--;
+    else
+        i--;
 }
 
-Console.WriteLine($"\n{minSumLine + 1} - строкa с наименьшей суммой ({sumLine}) элементов ");
-
+Show2dArray(spiralArray);
 
